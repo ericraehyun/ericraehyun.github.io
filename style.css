@@ -1,0 +1,22 @@
+body {
+    background-color: cornsilk;
+}
+header {
+    text-align: center;
+}
+h1 {
+    font-size: 50px;
+    color:rgb(114, 72, 170);
+    text-decoration: underline;
+    background-color: bisque;
+    font-weight: 900;
+    font-family: fantasy;
+}
+a:link,
+a:visited{
+    color: black;
+}
+a:hover {
+    color: yellow;
+    background-color: black;
+}
