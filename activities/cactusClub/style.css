@@ -4,6 +4,15 @@ body {
 }
 header {
     background-color: #1f1f2e;
+    margin-left: 20px;
+}
+section {
+    margin-left: 20px;
+}
+footer {
+    background-color: #1f1f2e;
+    color: white;
+    margin-left: 20px;
 }
 a {
     text-decoration: none;
@@ -12,4 +21,14 @@ a {
 }
 h1 {
     color: whitesmoke;
+}
+h2 {
+    text-align: center;
+    color: rgb(165, 187, 121);
+}
+.indexBest {
+    text-align: center;
+}
+.yaletown {
+    color: black;
 }
