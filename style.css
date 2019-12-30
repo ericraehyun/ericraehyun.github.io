@@ -47,3 +47,11 @@ a:hover {
 .footerCopyright {
     color: #99738E;
 }
+.headerFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.extraSpace {
+    width: 30vw;
+}
