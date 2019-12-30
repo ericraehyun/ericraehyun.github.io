@@ -1,22 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+/* 
+dark blue: #242582 
+blue: #2F2FA2
+dark purple: #553D67
+purple: #99738E
+red: #F64C72
+*/
 body {
-    background-color: cornsilk;
+    font-family: 'Roboto', sans-serif;
+    background-color: #2f2fa2;
 }
 header {
     text-align: center;
 }
+section {
+    margin-left: 30px;
+}
+footer {
+    text-align: center;
+}
 h1 {
     font-size: 50px;
-    color:rgb(114, 72, 170);
-    text-decoration: underline;
-    background-color: bisque;
+    color: #F64C72;
     font-weight: 900;
-    font-family: 'Roboto', sans-serif;
+    
+}
+h2 {
+    color: #F64C72;
+    font-weight: 400;
+}
+p {
+    color: lightgray;
 }
 a:link,
 a:visited{
-    color: black;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
 }
 a:hover {
-    color: yellow;
-    background-color: black;
+    color: #99738E;
+}
+.navCenter {
+    text-align: center;
+}
+.footerCopyright {
+    color: #99738E;
 }
