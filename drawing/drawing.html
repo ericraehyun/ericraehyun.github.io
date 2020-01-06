@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <script>
+            var canvas; //javaScript canvas
+            var ctx; //Context of the canvas
+            window.onload = init; //When the window is loaded, run the init fuction.
+            function init() { //Function: Instructions
+                // In the current html file, connect with the element with "myCanvas".
+                canvas = document.getElementById("myCanvas")
+                //Initializing the context of the canvas to be 2D.
+                ctx = canvas.getContext("2d");
+                // Draw a rectangle with position and size.
+                ctx.fillRect(0,0,200,10);
+                ctx.fillRect(100,10,10,240);
+                ctx.fillRect(0,250,200,10);
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Drawing</h1>
+        </header>
+        <nav class="navCenter">
+            <a href="../index.html">HOMEPAGE</a> <br>
+            <a href="name.html">NAME</a>
+        </nav>
+        <section class="sectionCanvas">
+            <canvas id="myCanvas" height="585" width="1350"></canvas>
+        </section>
+        <footer>
+            <p>&copy;2020</p>
+        </footer>
+    </body>
+</html>

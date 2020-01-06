@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <script>
+            var canvas; 
+            var ctx; 
+            const UNIT = 20;
+            window.onload = init; 
+            function init() { 
+                canvas = document.getElementById("myCanvas")
+                ctx = canvas.getContext("2d");
+                drawName();
+                drawRuler(1);
+            }
+        </script>
+        <script src="drawName.js"></script>
+        <script src="drawRuler.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>NAME</h1>
+        </header>
+        <nav class="navCenter">
+            <a href="drawing.html">DRAWING</a>
+        </nav>
+        <section class="sectionCanvas">
+            <canvas id="myCanvas" height="585" width="1350"></canvas>
+        </section>
+        <footer>
+            <p>&copy;2020</p>
+        </footer>
+    </body>
+</html>
