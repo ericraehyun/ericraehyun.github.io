@@ -82,6 +82,14 @@ p {
     display: flex;
     padding-left: 60px;
 }
+.toShare {
+    display: flex;
+    padding-left: 60px;
+}
+.greens {
+    display: flex;
+    padding-left: 60px;
+}
 .menuItem {
     width: 27vw;
 }
