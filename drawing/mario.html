@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <script>
+            var canvas;
+            var ctx;
+            const UNIT = 10;
+            window.onload = init;
+            function init(){
+                canvas = document.getElementById("myCanvas");
+                ctx = canvas.getContext("2d");
+                drawMario();
+
+                drawRuler(10);
+            }
+                
+        </script>
+        <script src="drawRuler.js"></script>
+        <script src="drawCharacter.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>MARIO</h1>
+        </header>
+        <nav>
+            <a href="../index.html">HOMEPAGE</a> <br>
+            <a href="drawing.html">DRAWING</a>
+        </nav>
+        <section>
+            <canvas id="myCanvas" width="1250" height="585"></canvas>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>
