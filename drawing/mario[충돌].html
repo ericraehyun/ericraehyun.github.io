@@ -8,16 +8,18 @@
             const UNIT = 10;
             window.onload = init;
             function init(){
+                
                 canvas = document.getElementById("myCanvas");
                 ctx = canvas.getContext("2d");
-                drawMario();
-
+                drawBackground("lightblue","green");
+                drawMario("walk");
+                
                 drawRuler(10);
             }
-                
         </script>
         <script src="drawRuler.js"></script>
         <script src="drawMario.js"></script>
+        <script src="drawBackground.js"></script>
     </head>
     <body>
         <header>
