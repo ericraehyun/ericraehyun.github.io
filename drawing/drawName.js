@@ -1,4 +1,7 @@
-function drawName() {
+function drawName(x,y,scale) {
+    ctx.save();
+    ctx.translate(x*UNIT,y*UNIT);
+    ctx.scale(scale,scale);
     drawE();
     drawR();
     drawI();
@@ -8,8 +11,10 @@ function drawName() {
     drawU();
     drawN();
     drawG();
+    ctx.restore();
 }
 function drawE() {
+    ctx.fillStyle = "#E39D24";
     ctx.fillRect(0*UNIT,0*UNIT,4*UNIT,1*UNIT);
     ctx.fillRect(0*UNIT,1*UNIT,1*UNIT,6*UNIT);
     ctx.fillRect(1*UNIT,3*UNIT,2*UNIT,1*UNIT);
