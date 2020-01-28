@@ -12,10 +12,9 @@ function drawMario(type, frame, x,y) {
             drawHeadWalk2();
             drawBodyWalk2();
         }
-     else if (type == "run") {
-         drawBodyRun();
-         drawHeadRun();
-     }
+    } else if (type == "run") {
+        drawHeadRun();
+        drawBodyRun();
     }
     ctx.restore();
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <script>
+            var canvas;
+            var ctx;
+            var requestId;
+            var positionX = 0;
+            const UNIT = 10;
+            window.onload = init;
+            function init() {
+                setup();
+                // provide  a  unique ID for the new frame in  animation by
+                // calling the animationLoop function.
+                requestId = requestAnimationFrame(animationLoop);
+            }
+            function setup() {
+                canvas = document.getElementById("myCanvas");
+                ctx = canvas.getContext("2d");
+            }
+            // The function that repeats forever to animate in the canvas
+            function animationLoop() {
+                // Erase everything from the  canvas.
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                incrementPositionX();
+                ctx.fillRect(positionX,0,5*UNIT,5*UNIT);
+                requestId  = requestAnimationFrame(animationLoop);
+            }
+            function incrementPositionX() {
+                //positionX's value is increased by 1.
+                positionX += 5;
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Animation</h1>
+        </header>
+        <nav>
+            <a href="../index.html">Homepage</a>
+            <a href="slide.html">SLIDE</a>
+        </nav>
+        <section>
+            <canvas id="myCanvas" width="1250" height="585"></canvas>
+        </section>
+        <footer>
+            <p>&copy;2020</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <script>
+            var canvas;
+            var ctx;
+            var requestId;
+            var positionX = 0;
+            const UNIT = 10;
+            window.onload = init;
+            function init() {
+                setup();
+                requestId = requestAnimationFrame(animationLoop);
+            }
+            function setup() {
+                canvas = document.getElementById("myCanvas");
+                ctx = canvas.getContext("2d");
+            }
+            function animationLoop() {
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                drawBackground("lightblue","green");
+                drawMario("walk",1,positionX,16.5);
+                drawName(110,55,0.3);
+                incrementPositionX();
+                requestId  = requestAnimationFrame(animationLoop);
+            }
+            function incrementPositionX() {
+                positionX += .4;
+            }
+        </script>
+        <script src="../drawing/drawRuler.js"></script>
+        <script src="../drawing/drawMario.js"></script>
+        <script src="../drawing/drawBackground.js"></script>
+        <script src="../drawing/drawName.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>SLIDE</h1>
+        </header>
+        <nav>
+            <a href="../index.html">Homepage</a>
+        </nav>
+        <section>
+            <canvas id="myCanvas" width="1250" height="585"></canvas>
+        </section>
+        <footer>
+            <p>&copy;2020</p>
+        </footer>
+    </body>
+</html>
