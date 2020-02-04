@@ -6,7 +6,10 @@
             var canvas;
             var ctx;
             var requestId;
+            var cloudPositionX = 0;
             var positionX = 0;
+            var marioIsFacingRight  = true;
+            var cloudIsFacingRight = true;
             const UNIT = 10;
             window.onload = init;
             function init() {
@@ -20,13 +23,56 @@
             function animationLoop() {
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 drawBackground("lightblue","green");
-                drawMario("walk",1,positionX,16.5);
+                drawCloud("white",cloudPositionX,0);
                 drawName(110,55,0.3);
-                incrementPositionX();
+                updateCloudFacingRight();
+                updateCloudPositionX();
+                updatePositionX();
+                updateFacingRight();
+                animateMario();
+                
+            
                 requestId  = requestAnimationFrame(animationLoop);
             }
-            function incrementPositionX() {
-                positionX += .4;
+            function updatePositionX() {
+                if (marioIsFacingRight) {
+                    // Increment  position  X
+                    positionX += .8;
+                } else  {
+                    // Decrement  position X
+                    positionX -= .8;
+                }
+            }
+            function updateCloudPositionX() {
+                if (cloudIsFacingRight) {
+                    cloudPositionX += .3;
+                }  else {
+                    cloudPositionX -= .3;
+                }
+            }
+            function updateFacingRight() {
+                if (positionX > 20+canvas.width/UNIT) {
+                    marioIsFacingRight =  false;
+                } else if (positionX  < -20) {
+                    marioIsFacingRight  = true;
+                }
+            }
+            function updateCloudFacingRight() {
+                if (cloudPositionX > 20+canvas.width/UNIT) {
+                    cloudIsFacingRight  = false;
+                }  else if (positionX < -20) {
+                    cloudIsFacingRight  = true;
+                }
+            }
+            function animateMario() {
+                if (marioIsFacingRight) {
+                    drawMario("walk",1,positionX,16.5); 
+                } else {
+                    ctx.save();
+                    ctx.scale(-1,1);
+                    drawMario("walk",1,-positionX,16.5); 
+                    ctx.restore();
+                }
             }
         </script>
         <script src="../drawing/drawRuler.js"></script>
