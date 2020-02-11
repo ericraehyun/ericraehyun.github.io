@@ -15,6 +15,9 @@ function drawMario(type, frame, x,y) {
     } else if (type == "run") {
         drawHeadRun();
         drawBodyRun();
+    } else if (type == "small") {
+        // drawBodySmall();
+        drawHeadSmall();
     }
     ctx.restore();
 }
@@ -343,27 +346,83 @@ function drawBody() {
     ctx.fillRect(2*UNIT,21*UNIT,2*UNIT,1*UNIT);
     ctx.fillRect(1*UNIT,22*UNIT,2*UNIT,1*UNIT);
     ctx.fillStyle = "#B13425";
-    ctx.fillRect(4*UNIT,13*UNIT,4*UNIT,1*UNIT)
-    ctx.fillRect(7*UNIT,14*UNIT,2*UNIT,1*UNIT)
-    ctx.fillRect(8*UNIT,15*UNIT,1*UNIT,1*UNIT)
-    ctx.fillRect(8*UNIT,16*UNIT,2*UNIT,2*UNIT)
-    ctx.fillRect(7*UNIT,18*UNIT,4*UNIT,1*UNIT)
-    ctx.fillRect(10*UNIT,13*UNIT,1*UNIT,2*UNIT)
-    ctx.fillRect(11*UNIT,15*UNIT,1*UNIT,2*UNIT)
-    ctx.fillRect(12*UNIT,17*UNIT,1*UNIT,1*UNIT)
-    ctx.fillRect(10*UNIT,19*UNIT,3*UNIT,4*UNIT)
-    ctx.fillRect(6*UNIT,19*UNIT,3*UNIT,7*UNIT)
-    ctx.fillRect(9*UNIT,20*UNIT,1*UNIT,3*UNIT)
-    ctx.fillRect(9*UNIT,23*UNIT,3*UNIT,4*UNIT)
-    ctx.fillRect(10*UNIT,27*UNIT,2*UNIT,1*UNIT)
-    ctx.fillRect(8*UNIT,26*UNIT,1*UNIT,1*UNIT)
-    ctx.fillRect(4*UNIT,21*UNIT,2*UNIT,4*UNIT)
-    ctx.fillRect(5*UNIT,20*UNIT,1*UNIT,1*UNIT)
-    ctx.fillRect(3*UNIT,22*UNIT,1*UNIT,2*UNIT)
-    ctx.fillRect(3*UNIT,25*UNIT,1*UNIT,5*UNIT)
-    ctx.fillRect(4*UNIT,26*UNIT,2*UNIT,4*UNIT)
-    ctx.fillRect(6*UNIT,27*UNIT,2*UNIT,2*UNIT)
-    ctx.fillRect(6*UNIT,29*UNIT,1*UNIT,1*UNIT)
+    ctx.fillRect(4*UNIT,13*UNIT,4*UNIT,1*UNIT);
+    ctx.fillRect(7*UNIT,14*UNIT,2*UNIT,1*UNIT);
+    ctx.fillRect(8*UNIT,15*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(8*UNIT,16*UNIT,2*UNIT,2*UNIT);
+    ctx.fillRect(7*UNIT,18*UNIT,4*UNIT,1*UNIT);
+    ctx.fillRect(10*UNIT,13*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(11*UNIT,15*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(12*UNIT,17*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(10*UNIT,19*UNIT,3*UNIT,4*UNIT);
+    ctx.fillRect(6*UNIT,19*UNIT,3*UNIT,7*UNIT);
+    ctx.fillRect(9*UNIT,20*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(9*UNIT,23*UNIT,3*UNIT,4*UNIT);
+    ctx.fillRect(10*UNIT,27*UNIT,2*UNIT,1*UNIT);
+    ctx.fillRect(8*UNIT,26*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(4*UNIT,21*UNIT,2*UNIT,4*UNIT);
+    ctx.fillRect(5*UNIT,20*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(3*UNIT,22*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(3*UNIT,25*UNIT,1*UNIT,5*UNIT);
+    ctx.fillRect(4*UNIT,26*UNIT,2*UNIT,4*UNIT);
+    ctx.fillRect(6*UNIT,27*UNIT,2*UNIT,2*UNIT);
+    ctx.fillRect(6*UNIT,29*UNIT,1*UNIT,1*UNIT);
+ }
+ function drawHeadSmall() {
+    ctx.fillStyle = "#6A6B04";
+    ctx.fillRect(4*UNIT,2*UNIT,3*UNIT,1*UNIT);
+    ctx.fillRect(5*UNIT,3*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(6*UNIT,5*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(3*UNIT,3*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(3*UNIT,5*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(9*UNIT,2*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(10*UNIT,4*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(9*UNIT,5*UNIT,4*UNIT,1*UNIT);
+    ctx.fillRect(5*UNIT,7*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(4*UNIT,7*UNIT,1*UNIT,4*UNIT);
+    ctx.fillRect(3*UNIT,8*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(2*UNIT,9*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(7*UNIT,7*UNIT,2*UNIT,2*UNIT);
+    ctx.fillRect(9*UNIT,7*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(10*UNIT,8*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(11*UNIT,8*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(12*UNIT,8*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(13*UNIT,9*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(3*UNIT,14*UNIT,3*UNIT,2*UNIT);
+    ctx.fillRect(2*UNIT,15*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(10*UNIT,14*UNIT,3*UNIT,2*UNIT);
+    ctx.fillRect(13*UNIT,15*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(4*UNIT,5*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(6*UNIT,4*UNIT,1*UNIT,1*UNIT);
+    ctx.fillStyle = "#E39D24";
+    ctx.fillRect(4*UNIT,3*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(7*UNIT,2*UNIT,2*UNIT,5*UNIT);
+    ctx.fillRect(6*UNIT,3*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(5*UNIT,5*UNIT,2*UNIT,2*UNIT);
+    ctx.fillRect(9*UNIT,6*UNIT,3*UNIT,1*UNIT);
+    ctx.fillRect(9*UNIT,4*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(10*UNIT,2*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(11*UNIT,3*UNIT,2*UNIT,2*UNIT);
+    ctx.fillRect(13*UNIT,4*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(2*UNIT,10*UNIT,2*UNIT,3*UNIT);
+    ctx.fillRect(4*UNIT,11*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(6*UNIT,10*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(9*UNIT,10*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(11*UNIT,11*UNIT,1*UNIT,1*UNIT);
+    ctx.fillRect(12*UNIT,10*UNIT,2*UNIT,3*UNIT);
+    ctx.fillStyle = "#B13425";
+    ctx.fillRect(5*UNIT,0*UNIT,5*UNIT,1*UNIT);
+    ctx.fillRect(4*UNIT,1*UNIT,9*UNIT,1*UNIT);
+    ctx.fillRect(6*UNIT,7*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(7*UNIT,9*UNIT,2*UNIT,1*UNIT);
+    ctx.fillRect(9*UNIT,8*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(5*UNIT,10*UNIT,1*UNIT,4*UNIT);
+    ctx.fillRect(4*UNIT,12*UNIT,1*UNIT,2*UNIT);
+    ctx.fillRect(6*UNIT,11*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(7*UNIT,10*UNIT,2*UNIT,3*UNIT);
+    ctx.fillRect(9*UNIT,11*UNIT,1*UNIT,3*UNIT);
+    ctx.fillRect(10*UNIT,10*UNIT,1*UNIT,4*UNIT);
+    ctx.fillRect(11*UNIT,12*UNIT,1*UNIT,2*UNIT);
  }
 
 
