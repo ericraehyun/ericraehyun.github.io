@@ -6,10 +6,9 @@
             var canvas;
             var ctx;
             var requestId;
-            var cloudPositionX = 0;
+            var cloudPositionX = 140;
             var positionX = 0;
             var marioIsFacingRight  = true;
-            var cloudIsFacingRight = true;
             const UNIT = 10;
             window.onload = init;
             function init() {
@@ -25,7 +24,6 @@
                 drawBackground("lightblue","green");
                 drawCloud("white",cloudPositionX,0);
                 drawName(110,55,0.3);
-                updateCloudFacingRight();
                 updateCloudPositionX();
                 updatePositionX();
                 updateFacingRight();
@@ -44,10 +42,10 @@
                 }
             }
             function updateCloudPositionX() {
-                if (cloudIsFacingRight) {
-                    cloudPositionX += .3;
-                }  else {
-                    cloudPositionX -= .3;
+                if (cloudPositionX < -20) {
+                    cloudPositionX = 150;
+                } else {
+                    cloudPositionX -= .4; 
                 }
             }
             function updateFacingRight() {
@@ -55,13 +53,6 @@
                     marioIsFacingRight =  false;
                 } else if (positionX  < -20) {
                     marioIsFacingRight  = true;
-                }
-            }
-            function updateCloudFacingRight() {
-                if (cloudPositionX > 20+canvas.width/UNIT) {
-                    cloudIsFacingRight  = false;
-                }  else if (positionX < -20) {
-                    cloudIsFacingRight  = true;
                 }
             }
             function animateMario() {
