@@ -9,7 +9,7 @@
             var cloudPositionX = 140;
             var positionX = 0;
             var marioIsFacingRight  = true;
-            const UNIT = 10;
+            const UNIT = 12;
             window.onload = init;
             function init() {
                 setup();
@@ -23,7 +23,7 @@
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 drawBackground("lightblue","green");
                 drawCloud("white",cloudPositionX,0);
-                drawName(110,55,0.3);
+                drawName(113,65,0.7);
                 updateCloudPositionX();
                 updatePositionX();
                 updateFacingRight();
@@ -57,11 +57,11 @@
             }
             function animateMario() {
                 if (marioIsFacingRight) {
-                    drawMario("walk",1,positionX,16.5); 
+                    drawMario("walk",1,positionX,32); 
                 } else {
                     ctx.save();
                     ctx.scale(-1,1);
-                    drawMario("walk",1,-positionX,16.5); 
+                    drawMario("walk",1,-positionX,32); 
                     ctx.restore();
                 }
             }
@@ -79,7 +79,7 @@
             <a href="../index.html">Homepage</a>
         </nav>
         <section>
-            <canvas id="myCanvas" width="1250" height="585"></canvas>
+            <canvas id="myCanvas" width="1750" height="885"></canvas>
         </section>
         <footer>
             <p>&copy;2020</p>

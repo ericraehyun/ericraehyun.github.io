@@ -5,7 +5,7 @@ function drawBackground(backgroundColour,floorColour) {
 }
 function drawFloor(floorColour) {
     ctx.fillStyle = floorColour;
-    ctx.fillRect(0,canvas.height-10*UNIT,canvas.width,10*UNIT);
+    ctx.fillRect(0,canvas.height-10*UNIT,canvas.width,100*UNIT);
 }
 function drawCloud(cloudColour,x,y) {
     ctx.fillStyle = cloudColour;

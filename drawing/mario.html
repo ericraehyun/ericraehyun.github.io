@@ -5,19 +5,21 @@
         <script>
             var canvas;
             var ctx;
-            const UNIT = 10;
+            const UNIT = 12;
             window.onload = init;
             function init(){
                 canvas = document.getElementById("myCanvas");
                 ctx = canvas.getContext("2d");
                 drawBackground("lightblue","green");
-                drawMario("walk",1,20,16.5);
-                drawMario("default",0,0,16.5);
-                drawMario("walk",2,40,16.5);
-                drawMario("run",0,60,16.5)
-                drawMario("small",0,80,32.5)
-                drawName(110,55,0.3);
-                drawRuler(10);
+                drawMario("default",0,0,32);
+                drawMario("walk",1,22,32);
+                drawMario("walk",2,44,32);
+                drawMario("walk",3,66,32);
+                drawMario("run",0,88,32)
+                drawMario("small",0,110,48)
+                drawCloud("white",132,20);
+                drawName(113,65,0.7);
+                drawRuler();
             }
                 
         </script>
@@ -36,7 +38,7 @@
             <a href="drawing.html">DRAWING</a>
         </nav>
         <section>
-            <canvas id="myCanvas" width="1250" height="585"></canvas>
+            <canvas id="myCanvas" width="1750" height="885"></canvas>
         </section>
         <footer>
 

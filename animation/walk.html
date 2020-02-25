@@ -10,9 +10,11 @@
             var ctx;
             var requestId;
             var positionX = 0;
+            var cloud1PositionX = 145;
+            var cloud2PositionX = 0;
             var time = 0;
             const MAX_TIME = 80; 
-            const UNIT = 10;
+            const UNIT = 12;
             window.onload = init;
             function init() {
                 setupCanvas();
@@ -26,14 +28,22 @@
             function animationLoop() {
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 drawBackground("lightblue","green");
+                drawCloud("white",cloud1PositionX,0);
+                drawCloud("white",cloud2PositionX,15);
                 updateTime();
                 animateMario();
-                drawName(110,55,0.3);
+                drawName(113,65,0.7);
                 updatePositionX();
+                updatecloud1positionX();
+                updatecloud2postionX();
                 requestId = requestAnimationFrame(animationLoop);
             }
             function updatePositionX() {
-                positionX += 0.4;
+                if(positionX > 160) {
+                positionX = -25   
+                } else {
+                positionX += 0.4;    
+                }
             }
             function updateTime() {
                 if (time < MAX_TIME) {
@@ -42,31 +52,49 @@
                     time = 0;
                 }
             }
+            function updatecloud1positionX() {
+                if (cloud1PositionX < -20) {
+                    cloud1PositionX = 150;
+                } else {
+                    cloud1PositionX -= .3;
+                }
+            }
+            function updatecloud2postionX() {      
+                if (cloud2PositionX > 150) {
+                    cloud2PositionX = -10
+                } else {
+                    cloud2PositionX += .2;
+                }
+            }
             function animateMario() {
                 // 0 < x < 30
                 if (0 <= time && time < MAX_TIME/4) {
-                    drawMario("walk",1,positionX,16.5);
+                    drawMario("walk",1,positionX,32);
                 } else if (MAX_TIME/4 <= time && time < MAX_TIME/2) {
                     // 30 <  x < 60
-                    drawMario("walk",2,positionX,16.5);
+                    drawMario("walk",2,positionX,32);
                 } else if (MAX_TIME/2 <= time && time < MAX_TIME*3/4) {
-                    drawMario("run",2,positionX,16.5)
+                    drawMario("walk",3,positionX,32)
                 } else if (MAX_TIME*3/4 <= time && time <= MAX_TIME) {
-                    drawMario("walk",2,positionX,16.5)
+                    drawMario("walk",2,positionX,32)
                 }
+            }
+            function x() {
+                ctx.save();
+                ctx.scale()
+                
             }
         </script>
     </head>
     <body>
         <header>
-            <h1>walk</h1>
+            <h1>WALK</h1>
         </header>
         <nav>
             <a href="animation.html">Animation</a>
         </nav>
         <section>
-            <canvas id="myCanvas" width="1250" height="585"></canvas>
-        </section>
+            <canvas id="myCanvas" width="1750" height="885"></canvas>        </section>
         <footer>
 
         </footer>
