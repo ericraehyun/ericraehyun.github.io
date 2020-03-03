@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <script src="../drawing/drawMario.js"></script>
+        <script src="../drawing/drawBackground.js"></script>
+        <script src="../drawing/drawName.js"></script>
+        <script src="../drawing/drawRuler.js"></script>
+        <script>
+            var canvas;
+            var ctx;
+            var requestId;
+            var positionX = 0;
+            var positionY = 31.5;
+            var time = 0;
+            const MAX_TIME = 80; 
+            const UNIT = 12;
+            const JUMP_POSITION = 55;
+            const PEAK_POSITION = 75;
+            const LAND_POSITION = 95;
+            const ACCELERATION = 1.1;
+            window.onload = init;
+            function init() {
+                setupCanvas();
+                
+                requestId = requestAnimationFrame(animationLoop);
+            }
+            function setupCanvas() {
+                canvas = document.getElementById("myCanvas");
+                ctx = canvas.getContext("2d");
+            }
+            function animationLoop() {
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                drawBackground("lightblue","green");
+                animateMario();
+                updateTime();
+                drawName(113,65,0.7);
+                updatePositionX();
+                updatePositionY();
+                drawRuler();
+                requestId = requestAnimationFrame(animationLoop);
+            }
+            function updatePositionX() {
+                if(positionX > canvas.width/UNIT+15) {
+                    positionX = -10;
+                } else {
+                    positionX += 0.5;
+                }
+            }
+            function updateTime() {
+                if (time <MAX_TIME) {
+                    time += 1;
+                } else {
+                    time = 0;
+                }
+            }
+            function animateMario() {
+                if((JUMP_POSITION <= positionX) && (positionX <LAND_POSITION)) {
+                    drawMario("run",1,positionX,positionY)
+                } else {
+                    if (0 <= time && time < MAX_TIME/4) {
+                    drawMario("walk",1,positionX,positionY);
+                } else if (MAX_TIME/4 <= time && time < MAX_TIME/2) {
+                    // 30 <  x < 60
+                    drawMario("walk",2,positionX,positionY);
+                } else if (MAX_TIME/2 <= time && time < MAX_TIME*3/4) {
+                    drawMario("walk",3,positionX,positionY)
+                } else if (MAX_TIME*3/4 <= time && time <= MAX_TIME) {
+                    drawMario("walk",2,positionX,positionY)
+                }
+                    // drawMario("walk",1,positionX,positionY);
+                }
+                
+            }
+            function updatePositionY() {
+                if ((JUMP_POSITION <= positionX) && (positionX < PEAK_POSITION)) {
+                    positionY /= ACCELERATION;
+                } else if ((PEAK_POSITION <= positionX) && (positionX < LAND_POSITION)) {
+                    positionY *= ACCELERATION;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>JUMP</h1>
+        </header>
+        <nav>
+            <a href="animation.html">Animation</a>
+        </nav>
+        <section>
+            <canvas id="myCanvas" width="1750" height="885"></canvas></section>
+        <footer>
+
+        </footer>
+    </body>
+</html>
